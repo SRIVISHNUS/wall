@@ -1,0 +1,40 @@
+package com.example.sgwallpaper
+
+import android.app.WallpaperManager
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import androidx.appcompat.app.AppCompatActivity
+import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_main.*
+
+class MainActivity : AppCompatActivity(){
+    var myWallpaperList = arrayOf(R.drawable.wallpaper4,R.drawable.wallpaper3,R.drawable.wallpaper1,R.drawable.wallpaper5,R.drawable.wallpaper2)
+    override fun onCreate(savedInstancestate:Bundle?){
+        super.onCreate(savedInstancestate)
+        setContentView(R.layout.activity_main)
+        wpbtn.setOnClickListener{setWallpaper()}
+    }
+    private fun setWallpaper(){
+        Toast.makeText(this,"Setting Wallpaper please wait.",Toast.LENGTH_SHORT).show()
+        Handler(Looper.getMainLooper()).postDelayed({
+            for(i in this.myWallpaperList){
+                val pic:Bitmap=BitmapFactory.decodeResource(resources,i)
+                val wM=WallpaperManager.getInstance(baseContext)
+                wM.setBitmap(pic)
+            }
+        },2000)
+    }
+}
+
+
+//to add wallpapers to the program
+//- go to resource manager
+//- click on "plus' sign
+//- import drawables
+//- add the required files from the file explorer
+
+//we also need to provide the permission of the given app, by checking the log section
+//we can also provide the permission by accessing the androidmanifest file in the manifest folder
