@@ -29,12 +29,38 @@ class MainActivity : AppCompatActivity(){
     }
 }
 
+xml file
 
-//to add wallpapers to the program
-//- go to resource manager
-//- click on "plus' sign
-//- import drawables
-//- add the required files from the file explorer
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
-//we also need to provide the permission of the given app, by checking the log section
-//we can also provide the permission by accessing the androidmanifest file in the manifest folder
+    <EditText
+        android:id="@+id/head"
+        android:layout_width="237dp"
+        android:layout_height="62dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Wallpaper Changer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.137" />
+
+    <Button
+        android:id="@+id/WPBtn"
+        android:layout_width="193dp"
+        android:layout_height="73dp"
+        android:text="Click Here!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.453" />
+</android.support.constraint.ConstraintLayout>
